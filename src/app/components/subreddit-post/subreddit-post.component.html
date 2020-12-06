@@ -13,6 +13,9 @@
     <p>
       {{ post.title }}
     </p>
+    <p *ngIf="contentIsShown">
+      {{ post.selftext }}
+    </p>
   </div>
   <div class="right">
     <p>
@@ -20,9 +23,6 @@
     </p>
     <p>
       {{ post.dateCreatedString }}
-    </p>
-    <p *ngIf="contentIsShown">
-      {{ post.selftext }}
     </p>
   </div>
 
