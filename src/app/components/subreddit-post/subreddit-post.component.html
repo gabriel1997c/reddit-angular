@@ -1,10 +1,10 @@
 <div [ngClass]="setClasses()" (click)="toggleShow()">
   <div class="left">
-    <p>
+    <p class="upvote">
       <fa-icon [icon]="faArrowUp"></fa-icon>
       {{ post.upvotes }}
     </p>
-    <p>
+    <p class="downvote">
       <fa-icon [icon]="faArrowDown"></fa-icon>
       {{ post.downvotes }}
     </p>
@@ -19,7 +19,7 @@
       submitted by {{ post.author }}
     </p>
     <p>
-      on {{ post.dateCreatedString }}
+      {{ post.dateCreatedString }}
     </p>
     <p *ngIf="contentIsShown">
       {{ post.selftext }}

@@ -9,6 +9,7 @@ import { ListComponent } from './components/list/list.component';
 import { SearchSubredditComponent } from './components/search-subreddit/search-subreddit.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HeaderComponent } from './components/layout/header/header.component';
     ListComponent,
     SearchSubredditComponent,
     HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

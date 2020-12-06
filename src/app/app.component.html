@@ -1,12 +1,15 @@
 <div>
   <app-header></app-header>
-  <app-search-subreddit (changeSubreddit)="changeSubreddit($event)"></app-search-subreddit>
-  <div *ngIf="subreddit; else emptySubredditBlock">
-    <h2>These are the top posts from /r/{{ this.subreddit }}.</h2>
-    <h2>Click on a post to see its content.</h2>
-    <app-list [subreddit]="subreddit"></app-list>
+  <div class="content">
+    <app-search-subreddit (changeSubreddit)="changeSubreddit($event)"></app-search-subreddit>
+    <div *ngIf="subreddit; else emptySubredditBlock">
+      <h2>These are the top posts from /r/{{ this.subreddit }}.</h2>
+      <h2>Click on a post to see its content.</h2>
+      <app-list [subreddit]="subreddit"></app-list>
+    </div>
+    <ng-template #emptySubredditBlock>
+      <h2>Please enter a subreddit above!</h2>
+    </ng-template>
+    <app-footer></app-footer>
   </div>
-  <ng-template #emptySubredditBlock>
-    <h2>Please enter a subreddit above!</h2>
-  </ng-template>
 </div>
