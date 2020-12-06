@@ -4,7 +4,7 @@
   width: 100%;
   padding: 1%;
   margin-top: 1.5%;
-  color: #1e2022;
+  color: var(--darkest);
   font-size: 1.3rem;
   font-weight: 700;
   height: 1.4rem;
@@ -15,7 +15,7 @@
 .icon {
   display: inline;
   margin: 0 10px auto;
-  color: #1e2022;
+  color: var(--darkest);
 }
 
 .icon:hover {

@@ -1,13 +1,14 @@
 .post {
   padding: 1%;
-  border-bottom: 8px #445566 solid;
+  background-color: var(--cool-dark);
+  border-bottom: 8px var(--nice-gray) solid;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   display: flex;
 }
 
 .post:hover {
-  background-color: #1e2022;
+  background-color: var(--darkest);
 }
 
 .left {
@@ -24,7 +25,7 @@
 }
 
 .upvote {
-  color: #ff4500;
+  color: var(--orange);
 }
 
 .downvote {
