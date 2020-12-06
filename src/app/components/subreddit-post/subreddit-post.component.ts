@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SubredditPost } from '../../models/SubredditPost';
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-subreddit-post',
@@ -8,6 +9,10 @@ import { SubredditPost } from '../../models/SubredditPost';
 })
 export class SubredditPostComponent implements OnInit {
   @Input() post: SubredditPost;
+  contentIsShown: boolean = false;
+  faArrowDown = faArrowDown;
+  faArrowUp = faArrowUp;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -19,5 +24,9 @@ export class SubredditPostComponent implements OnInit {
     };
 
     return classes;
+  }
+
+  toggleShow() {
+    this.contentIsShown = !this.contentIsShown;
   }
 }

@@ -4,4 +4,5 @@ export class SubredditPost {
   upvotes: number;
   downvotes: number;
   selftext: string;
+  dateCreatedString: string;
 }

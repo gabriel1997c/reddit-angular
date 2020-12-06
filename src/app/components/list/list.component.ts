@@ -21,4 +21,13 @@ export class ListComponent implements OnInit {
       this.posts = this.subredditPostService.mapResponse(response);
     });
   }
+
+  //set dynamic classes
+  setClasses() {
+    let classes = {
+      list: true,
+    };
+
+    return classes;
+  }
 }

@@ -1,11 +1,28 @@
-<div [ngClass]="setClasses()">
-  <p>
-    <strong>{{ post.title }}</strong>
-  </p>
-  <p>
-    by {{ post.author }}
-  </p>
-  <p>
-    {{ post.upvotes }} upvotes and {{ post.downvotes }} downvotes
-  </p>
+<div [ngClass]="setClasses()" (click)="toggleShow()">
+  <div class="left">
+    <p>
+      <fa-icon [icon]="faArrowUp"></fa-icon> {{ post.upvotes }}
+    </p>
+    <p>
+      <fa-icon [icon]="faArrowDown"></fa-icon>
+      {{ post.downvotes }}
+    </p>
+  </div>
+  <div class="center">
+    <p>
+      {{ post.title }}
+    </p>
+  </div>
+  <div class="right">
+    <p>
+      submitted by {{ post.author }}
+    </p>
+    <p>
+      on {{ post.dateCreatedString }}
+    </p>
+    <p *ngIf="contentIsShown">
+      {{ post.selftext }}
+    </p>
+  </div>
+
 </div>

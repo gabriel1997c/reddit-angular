@@ -13,12 +13,10 @@ export class SubredditPostService {
 
   constructor(private http: HttpClient) {}
 
-  getFullUrl(subreddit: string): string {
-    return `${this.baseUrl}${subreddit}/${this.topPosts}?raw_json=1&${this.limitPosts}`;
-  }
-
   getPosts(subreddit: string): Observable<SubredditPost[]> {
-    return this.http.get<SubredditPost[]>(this.getFullUrl(subreddit));
+    return this.http.get<SubredditPost[]>(
+      `${this.baseUrl}${subreddit}/${this.topPosts}?raw_json=1&${this.limitPosts}`
+    );
   }
 
   mapResponse(response) {
@@ -32,6 +30,9 @@ export class SubredditPostService {
       post.upvotes = children[i].data.ups;
       post.downvotes = children[i].data.downs;
       post.selftext = children[i].data.selftext;
+      post.dateCreatedString = new Date(
+        children[i].data.created_utc * 1000
+      ).toUTCString();
       posts.push(post);
     }
     return posts;
